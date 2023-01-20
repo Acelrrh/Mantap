@@ -1,5 +1,5 @@
 #!/bin/bash
-# SL
+# habib
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -25,7 +25,7 @@ fi
 # Mod By SL
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/senowahyu62/scriptvps/main/ssh"
+akbarvpn="raw.githubusercontent.com/acelrrh/mantap/main/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
