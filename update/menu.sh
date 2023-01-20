@@ -101,7 +101,7 @@ echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
 echo -e   ""
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " \e[33mClient Name \E[0m: $Name"
-echo -e " \e[33mExpired     \E[0m: $Exp2"
+echo -e " \e[33mExpired     \E[0m: $Exp"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e   ""
 read -p " Select menu :  "  opt
