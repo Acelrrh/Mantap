@@ -100,11 +100,11 @@ echo -e   ""
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
 echo -e   ""
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[33mIP VPS \E[0m: $IPVPS"
+echo -e " \e[33mIP VPS          \E[0m: $IPVPS"
 echo -e " \e[33mNAMA DOMAIN     \E[0m: $domain"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e   ""
-read -p " Select menu :  "  opt
+read -p " Select menu :menu  "  opt
 echo -e   ""
 case $opt in
 1)
