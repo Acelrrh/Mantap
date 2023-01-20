@@ -130,7 +130,7 @@ echo "   - Stunnel5                : 443, 445"  | tee -a log-install.txt
 echo "   - Dropbear                : 443, 109, 143"  | tee -a log-install.txt
 echo "   - CloudFront Websocket    : "  | tee -a log-install.txt
 echo "   - SSH Websocket TLS       : 443"  | tee -a log-install.txt
-echo "   - SSH Websocket HTTP      : 8880"  | tee -a log-install.txt
+echo "   - SSH Websocket HTTP      : 80"  | tee -a log-install.txt
 echo "   - Websocket OpenVPN       : 2086"  | tee -a log-install.txt
 echo "   - Squid Proxy             : 3128, 8080"  | tee -a log-install.txt
 echo "   - Badvpn                  : 7100, 7200, 7300"  | tee -a log-install.txt
