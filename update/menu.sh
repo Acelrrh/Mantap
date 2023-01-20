@@ -8,16 +8,16 @@ wh="\033[0m"
 clear
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "                 • SUPREME •                 "
-echo -e "$\[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$\[33m OS            \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
-echo -e "$\[33m IP            \e[0m:  $IPVPS"	
-echo -e "$\[33m WATSHAPP      \e[0m:+6281374452477
-echo -e "$\[33m NEGARA        \e[0m:  INDONESIA"
-echo -e "$\[33m DOMAIN        \e[0m:  $domain"	
-echo -e "$\[33m DATE & TIME   \e[0m:  $DATE2"	
-echo -e "$\[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$                 • SCRIPT MENU •                 "
-echo -e "$\[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\[33m OS            \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
+echo -e "\[33m IP            \e[0m:  $IPVPS"	
+echo -e " \[33m WATSHAPP      \e[0m:+6281374452477
+echo -e " \[33m NEGARA        \e[0m:  INDONESIA"
+echo -e " \[33m DOMAIN        \e[0m:  $domain"	
+echo -e " \[33m DATE & TIME   \e[0m:  $DATE2"	
+echo -e " \[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "                 • SCRIPT MENU •                 "
+echo -e " \[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$y                  MENU UTAMA $yy"
 echo -e "$y            Script Mod By BABANG BOY $yy"
 echo -e "$y-------------------------------------------------$m"
