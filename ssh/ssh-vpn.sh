@@ -374,7 +374,7 @@ cd /usr/bin
 wget -O addhost "https://${akbarvpn}/addhost.sh"
 wget -O slhost "https://${akbarvpn}/slhost.sh"
 wget -O about "https://${akbarvpn}/about.sh"
-wget -O menu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/menu.sh"
 wget -O addssh "https://${akbarvpn}/addssh.sh"
 wget -O trialssh "https://${akbarvpn}/trialssh.sh"
 wget -O delssh "https://${akbarvpn}/delssh.sh"
