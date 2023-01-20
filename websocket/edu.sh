@@ -4,16 +4,16 @@
 # ==========================================
 
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/Acelrrh/Mantap/main/websocket"
+babangboy="raw.githubusercontent.com/Acelrrh/Mantap/main/websocket"
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-nontls https://${akbarvpn}/websocket.py
+wget -q -O /usr/local/bin/ws-nontls https://${babangboy}/websocket.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
-Description=Python Proxy Mod By Akbar Maulana
+Description=Python Proxy Mod babangboy
 Documentation=https://nekopi.care
 After=network.target nss-lookup.target
 
@@ -35,13 +35,13 @@ systemctl enable ws-nontls
 systemctl restart ws-nontls
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpn https://${akbarvpn}/ws-ovpn.py
+wget -q -O /usr/local/bin/ws-ovpn https://${babangboy}/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Python Proxy Mod By LamVpn
+Description=Python Proxy Mod babangboy
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
@@ -63,13 +63,13 @@ systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-tls https://${akbarvpn}/ws-tls
+wget -q -O /usr/local/bin/ws-tls https://${babangboy}/ws-tls
 chmod +x /usr/local/bin/ws-tls
 
 # Installing Service
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
-Description=Python Proxy Mod By geovpn
+Description=Python Proxy Mod babangboy
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
