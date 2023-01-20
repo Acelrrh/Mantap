@@ -132,14 +132,96 @@ echo -e   ""
 read -p " Select menu :  "  opt
 echo -e   ""
 case $opt in
-1) clear ; m-sshovpn ;;
-2) clear ; m-vmess ;;
-3) clear ; m-vless ;;
-4) clear ; m-ssws ;;
-5) clear ; m-trojan ;;
-6) clear ; m-system ;;
-7) clear ; running ;;
-8) clear ; clearcache ;;
-x) exit ;;
-*) echo "Anda salah tekan " ; sleep 1 ; menu ;;
+1)
+clear
+sshovpnmenu
+;;
+2)
+clear
+l2tpmenu
+;;
+3)
+clear
+pptpmenu
+;;
+4)
+clear
+sstpmenu
+;;
+5)
+clear
+wgmenu
+;;
+6)
+clear
+ssmenu
+;;
+7)
+clear
+ssrmenu
+;;
+8)
+clear
+vmessmenu
+;;
+9)
+clear
+vlessmenu
+;;
+10)
+clear
+trmenu
+;;
+11)
+clear
+trgomenu
+;;
+12)
+clear
+grpcmenu
+;;
+13)
+clear
+slowdnsmenu
+;;
+14)
+clear
+ipsaya
+;;
+15)
+clear
+running
+;;
+16)
+clear
+updatemenu
+;;
+17)
+clear
+sl-fix
+;;
+18)
+clear
+setmenu
+;;
+19)
+clear
+exit
+;;
+20)
+clear
+copyrepo
+;;
+21)
+clear
+menuinfo
+;;
+22)
+clear
+addss-p
+;;
+*)
+clear
+menu
+;;
 esac
