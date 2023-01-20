@@ -4,7 +4,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[0;100;33m       • L2TP •         \E[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e " [\e[36m•1\e[0m] Create Account L2TP
+echo -e " [\e[36m•1\e[0m] Create Account L2TP"
 echo -e " [\e[36m•2\e[0m] Delete Account L2TP "
 echo -e " [\e[36m•3\e[0m] Extending Account L2TP Active Life"
 echo -e " [\e[36m•4\e[0m] MENU "
