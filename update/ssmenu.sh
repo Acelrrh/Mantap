@@ -1,6 +1,6 @@
 #!/bin/bash
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;100;33m      • SSH MENU •          \E[0m"
+echo -e "\E[0;100;33m      • SHADOWSOCKS •          \E[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo -e " [\e[36m•1\e[0m] Create Account Shadowsocks"
