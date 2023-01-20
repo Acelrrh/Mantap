@@ -1,28 +1,29 @@
 #!/bin/bash
-clear
-m="\033[0;1;36m"
-y="\033[0;1;37m"
-yy="\033[0;1;32m"
-yl="\033[0;1;33m"
-wh="\033[0m"
-echo -e "$y                 SSH & OpenVPN $wh"
-echo -e "$y-------------------------------------------------------------$wh"
-echo -e "$yy 1$y.  Create SSH & OpenVPN Account"
-echo -e "$yy 2$y.  Generate SSH & OpenVPN Trial Account"
-echo -e "$yy 3$y.  Extending SSH & OpenVPN Account Active Life"
-echo -e "$yy 4$y.  Check User Login SSH & OpenVPN"
-echo -e "$yy 5$y.  Daftar Member SSH & OpenVPN"
-echo -e "$yy 6$y.  Delete SSH & OpenVpn Account"
-echo -e "$yy 7$y.  Delete User Expired SSH & OpenVPN"
-echo -e "$yy 8$y.  Set up Autokill SSH"
-echo -e "$yy 9$y.  Displays Users Who Do Multi Login SSH"
-echo -e "$yy 10$y. Restart All Service"
-echo -e "$yy 11$y. Menu Utama"
-echo -e "$yy 12$y. Exit"
-echo -e "$y-------------------------------------------------------------$wh"
-read -p "Select From Options [ 1 - 12 ] : " menu
+clear#!/bin/bash
+clear 
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;100;33m      • Shadowsocks Account •          \E[0m"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-case $menu in
+echo -e " [\e[36m•1\e[0m] BUAT AKUN SSH "
+echo -e " [\e[36m•2\e[0m] BUAT TRIAL SSH "
+echo -e " [\e[36m•3\e[0m] RENEW SSH "
+echo -e " [\e[36m•4\e[0m] HAPUS AKUN SSH "
+echo -e " [\e[36m•5\e[0m] CEK USER LOGI "
+echo -e " [\e[36m•6\e[0m] CATATAN MEMBER "
+echo -e " [\e[36m•7\e[0m] HAPUS USER EXP "
+echo -e " [\e[36m•8\e[0m] SET UP KILL SSH "
+echo -e " [\e[36m•9\e[0m] CEK USER MULTI LOGI "
+echo -e ""
+echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
+echo -e   ""
+echo -e   "Press x or [ Ctrl+C ] • To-Exit"
+echo ""
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e ""
+read -p " Select menu : " opt
+echo -e ""
+case $opt in
 1)
 addssh
 ;;
