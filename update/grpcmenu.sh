@@ -1,23 +1,25 @@
 #!/bin/bash
-clear
-m="\033[0;1;36m"
-y="\033[0;1;37m"
-yy="\033[0;1;32m"
-yl="\033[0;1;33m"
-wh="\033[0m"
-echo -e "$y                          XRAY/VMESS-GRPC/VLESS-GRPC $wh"
-echo -e "$y-------------------------------------------------------------$wh"
-echo -e "$yy 1$y. Create Account XRAY/VMESS-GRPC/VLESS-GRPC $wh"
-echo -e "$yy 2$y. Delete Account XRAY/VMESS-GRPC/VLESS-GRPC $wh"
-echo -e "$yy 3$y. Extending Account XRAY/VMESS-GRPC/VLESS-GRPC Active Life$wh"
-echo -e "$yy 4$y. Check User Login XRAY/VMESS-GRPC/VLESS-GRPC $wh"
-echo -e "$yy 5$y. Script Update XRAY/VMESS-GRPC/VLESS-GRPC $wh"
-echo -e "$yy 6$y. Menu$wh"
-echo -e "$yy 7$y. Exit$wh"
-echo -e "$y-------------------------------------------------------------$wh"
-read -p "Select From Options [ 1 - 7 ] : " menu
+-e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;100;33m      • SSH MENU •          \E[0m"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-case $menu in
+echo -e " [\e[36m•1\e[0m] BUAT XRAY/VMESS-GRPC/VLESS-GRPC "
+echo -e " [\e[36m•2\e[0m] HAPUS AKUN XRAY/VMESS-GRPC/VLESS-GRPC  "
+echo -e " [\e[36m•3\e[0m] EXTENDING AKUN XRAY/VMESS-GRPC/VLESS-GRPC AKTIF LIFE"
+echo -e " [\e[36m•4\e[0m] CEK USER LOGI XRAY/VMESS-GRPC/VLESS-GRPC Active LIFE "
+echo -e " [\e[36m•5\e[0m] CEK UPDATE XRAY/VMESS-GRPC/VLESS-GRPC Active LIFE " "
+echo -e " [\e[36m•7\e[0m] MENU "
+echo -e " [\e[36m•8\e[0m] KELUAR "
+echo -e ""
+echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
+echo -e   ""
+echo -e   "Press x or [ Ctrl+C ] • To-Exit"
+echo ""
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e ""
+read -p " Select menu : " opt
+echo -e ""
+case $opt in
 1)
 addgrpc
 ;;
