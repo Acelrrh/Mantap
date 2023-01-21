@@ -58,7 +58,7 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess/",
+      "path": "/vmess",
       "type": "none",
       "host": "",
       "tls": "tls"
@@ -73,7 +73,7 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess/",
+      "path": "/vmess",
       "type": "none",
       "host": "",
       "tls": "none"
@@ -97,7 +97,7 @@ echo -e "User ID     : ${uuid}"
 echo -e "Alter ID    : 0"
 echo -e "Security    : auto"
 echo -e "Network     : ws"
-echo -e "Path        : /vmess/"
+echo -e "Path        : /vmess"
 echo -e "Created     : $hariini"
 echo -e "Expired     : $exp"
 echo -e "========================="
@@ -105,4 +105,4 @@ echo -e "Link TLS    : ${xrayv2ray1}"
 echo -e "========================="
 echo -e "Link No TLS : ${xrayv2ray2}"
 echo -e "========================="
-echo -e "Script Mod By SL"
+echo -e "Script Mod By BABANG BOY "
