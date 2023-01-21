@@ -9,7 +9,7 @@ echo -e "$y=====================================$yy"
 echo -e "$y         yy$MODIFF : BABANG BOY$yy"
 echo -e "$y                  
 echo -e "$y=====================================$y"
-echo -e "$y                  MENU UTAMA $wh"
+echo -e "$y                  "yy$MENU UTAMA $wh"
 echo -e "$y            "yy$Script Mod By BABANG BOY $wh"
 echo -e "$y-------------------------------------------------$wh"
 echo -e "$yy 1$y.  SSH & OpenVPN MENU  $wh"
