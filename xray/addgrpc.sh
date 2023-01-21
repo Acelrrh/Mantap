@@ -74,4 +74,4 @@ echo -e "${vlesslink1}"
 echo -e "================================="
 echo -e "Expired On     : $exp"
 echo -e "=================================" 
-echo -e " Script Mod By SL"
+echo -e " Script Mod By BABANG BOY
