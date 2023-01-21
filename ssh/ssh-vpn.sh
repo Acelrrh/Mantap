@@ -17,13 +17,13 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 akbarvpn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh"
 
 # Link Hosting Kalian Untuk Xray
-akbarvpnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/xray"
+akbarvpnn="raw.githubusercontent.com/acelrrh/Mantap/main/xray"
 
 # Link Hosting Kalian Untuk Trojan Go
-akbarvpnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/trojango"
+akbarvpnnn="raw.githubusercontent.com/acelrrh/Mantap/main/trojango"
 
 # Link Hosting Kalian Untuk Stunnel5
-akbarvpnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/stunnel5"
+akbarvpnnnn="raw.githubusercontent.com/acelrrh/Mantap/main/stunnel5"
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -163,9 +163,15 @@ chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
 
 
 # setting port ssh
@@ -186,9 +192,9 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # install squid (proxy nya aku matikan)
 cd
-#apt -y install squid3
-#wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
-#sed -i $MYIP2 /etc/squid/squid.conf
+apt -y install squid3
+wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
+sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
 apt -y install sslh
@@ -241,7 +247,7 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# install stunnel 5 
+# install stunnel 4 
 cd /root/
 wget -q -O stunnel5.zip "https://${akbarvpnnnn}/stunnel5.zip"
 unzip -o stunnel5.zip
@@ -256,27 +262,34 @@ rm -f stunnel5.zip
 mkdir -p /etc/stunnel5
 chmod 644 /etc/stunnel5
 
-# Download Config Stunnel5
-cat > /etc/stunnel5/stunnel5.conf <<-END
-cert = /etc/xray/xray.crt
-key = /etc/xray/xray.key
+# Download Config Stunnel4
+cd
+#install stunnel
+#apt install stunnel4 -y
+cat > /etc/stunnel/stunnel.conf <<-END
+cert = /etc/stunnel/stunnel.pem
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 445
+accept = 222
+connect = 127.0.0.1:22
+
+[dropbear]
+accept = 777
 connect = 127.0.0.1:109
 
-[openssh]
-accept = 777
-connect = 127.0.0.1:443
+[ws-stunnel]
+accept = 2096
+connect = 700
 
 [openvpn]
-accept = 990
+accept = 442
 connect = 127.0.0.1:1194
 
+END
 
 END
 
@@ -284,48 +297,48 @@ END
 #openssl genrsa -out key.pem 2048
 #openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 #-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
-#cat key.pem cert.pem >> /etc/stunnel5/stunnel5.pem
+#cat key.pem cert.pem >> /etc/stunnel4/stunnel4.pem
 
-# Service Stunnel5 systemctl restart stunnel5
-cat > /etc/systemd/system/stunnel5.service << END
+# Service Stunnel5 systemctl restart stunnel4
+cat > /etc/systemd/system/stunnel4.service << END
 [Unit]
-Description=Stunnel5 Service
+Description=Stunnel4 Service
 Documentation=https://stunnel.org
 Documentation=https://github.com/Akbar218
 After=syslog.target network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/stunnel5 /etc/stunnel5/stunnel5.conf
+ExecStart=/usr/local/bin/stunnel4 /etc/stunnel4/stunnel4.conf
 Type=forking
 
 [Install]
 WantedBy=multi-user.target
 END
 
-# Service Stunnel5 /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://${akbarvpnnnn}/stunnel5.init"
+# Service Stunnel4 /etc/init.d/stunnel4
+wget -q -O /etc/init.d/stunnel4 "https://${akbarvpnnnn}/stunnel5.init"
 
 # Ubah Izin Akses
-chmod 600 /etc/stunnel5/stunnel5.pem
-chmod +x /etc/init.d/stunnel5
+chmod 600 /etc/stunnel4/stunnel4.pem
+chmod +x /etc/init.d/stunnel4
 cp /usr/local/bin/stunnel /usr/local/bin/stunnel5
 
 # Remove File
 rm -r -f /usr/local/share/doc/stunnel/
 rm -r -f /usr/local/etc/stunnel/
 rm -f /usr/local/bin/stunnel
-rm -f /usr/local/bin/stunnel3
 rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel5
+rm -f /usr/local/bin/stunnel4
+#rm -f /usr/local/bin/stunnel4
 
-# Restart Stunnel 5
-systemctl stop stunnel5
-systemctl enable stunnel5
-systemctl start stunnel5
-systemctl restart stunnel5
-/etc/init.d/stunnel5 restart
-/etc/init.d/stunnel5 status
-/etc/init.d/stunnel5 restart
+# Restart Stunnel 4
+systemctl stop stunnel4
+systemctl enable stunnel4
+systemctl start stunnel4
+systemctl restart stunnel4
+/etc/init.d/stunnel4 restart
+/etc/init.d/stunnel4 status
+/etc/init.d/stunnel4 restart
 
 #OpenVPN
 wget https://${akbarvpn}/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
@@ -374,7 +387,7 @@ cd /usr/bin
 wget -O addhost "https://${akbarvpn}/addhost.sh"
 wget -O slhost "https://${akbarvpn}/slhost.sh"
 wget -O about "https://${akbarvpn}/about.sh"
-wget -O menu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/Acelrrh/Mantap/main/update/menu.sh"
 wget -O addssh "https://${akbarvpn}/addssh.sh"
 wget -O trialssh "https://${akbarvpn}/trialssh.sh"
 wget -O delssh "https://${akbarvpn}/delssh.sh"
@@ -421,28 +434,28 @@ wget -O addtrgo "https://${akbarvpnnn}/addtrgo.sh"
 wget -O deltrgo "https://${akbarvpnnn}/deltrgo.sh"
 wget -O renewtrgo "https://${akbarvpnnn}/renewtrgo.sh"
 wget -O cektrgo "https://${akbarvpnnn}/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/websocket/portsshws.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/acelrrh/Mantap/main/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/acelrrh/Mantap/main/websocket/portsshws.sh"
 
-wget -O ipsaya "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/ipsaya.sh"
-wget -O sshovpnmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/l2tpmenu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/vlessmenu.sh"
-wget -O grpcmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/grpcmenu.sh"
-wget -O grpcupdate "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/grpcupdate.sh"
-wget -O trmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/setmenu.sh"
-wget -O slowdnsmenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/slowdnsmenu.sh"
-wget -O running "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/running.sh"
-wget -O updatemenu "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/update/updatemenu.sh"
-wget -O sl-fix "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/sslh-fix/sl-fix"
+wget -O ipsaya "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/ipsaya.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/l2tpmenu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/acelrth/Mantap/main/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/vlessmenu.sh"
+wget -O grpcmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/grpcmenu.sh"
+wget -O grpcupdate "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/grpcupdate.sh"
+wget -O trmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/setmenu.sh"
+wget -O slowdnsmenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/slowdnsmenu.sh"
+wget -O running "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/running.sh"
+wget -O updatemenu "https://raw.githubusercontent.com/acelrrh/Mantap/main/update/updatemenu.sh"
+wget -O sl-fix "https://raw.githubusercontent.com/acelrrh/Mantap/main/sslh-fix/sl-fix"
 
 chmod +x sl-fix
 chmod +x ipsaya
@@ -553,6 +566,9 @@ chown -R www-data:www-data /home/vps/public_html
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
