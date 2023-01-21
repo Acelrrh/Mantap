@@ -26,7 +26,6 @@ delwg
 renewwg
 ;;
 4)
-clear
 menu
 ;;
 5)
