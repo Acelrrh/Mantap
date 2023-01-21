@@ -6,7 +6,7 @@ yy="\033[0;1;32m"
 yl="\033[0;1;33m"
 wh="\033[0m"
 echo -e "$y=============================="
-echo -e "$y         MODIFF : BABANG BOY$yy"
+echo -e "$y         yy$MODIFF : BABANG BOY$yy"
 echo -e "$y                  
 echo -e "$y============================"
 echo -e "$y                  MENU UTAMA $wh"
