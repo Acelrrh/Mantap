@@ -6,7 +6,6 @@ echo -e ""
 echo -e " [\e[36m•1\e[0m] Create Account WIREGUARD"
 echo -e " [\e[36m•2\e[0m] Delete Account WIREGUARD "
 echo -e " [\e[36m•3\e[0m] Extending Account WIREGUARD Active Life"
-echo -e " [\e[36m•4\e[0m] MENU "
 echo -e " [\e[36m•5\e[0m] KELUAR "
 echo -e ""
 echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
@@ -26,9 +25,6 @@ delwg
 renewwg
 ;;
 4)
-menu
-;;
-5)
 clear
 exit
 ;;
