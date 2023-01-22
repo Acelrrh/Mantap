@@ -18,6 +18,7 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
+akbarvpnnnnnnnnnnn="raw.githubusercontent.com/Acelrrh/Mantap/main/slowdns"
 # Link Hosting Kalian Untuk Ssh Vpn
 akbarvpn="raw.githubusercontent.com/Acelrrh/Mantap/main/ssh"
 # Link Hosting Kalian Untuk Sstp
@@ -51,7 +52,9 @@ echo "Script Already Installed"
 exit 0
 fi
 mkdir /var/lib/crot;
+#slowdns
 echo "IP=" >> /var/lib/crot/ipvps.conf
+wget https://${akbarvpnnnnnnnnnnn}/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 wget https://${akbarvpn}/slhost.sh && chmod +x slhost.sh && ./slhost.sh
 #install xray
 wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
@@ -82,7 +85,7 @@ wget https://raw.githubusercontent.com/Acelrrh/Mantap/main/grpc/xray-grpc.sh && 
 #install shadowsocks plugin
 wget https://raw.githubusercontent.com/Acelrrh/Mantap/main/shadowsocks-plugin/install-ss-plugin.sh && chmod +x install-ss-plugin.sh && ./install-ss-plugin.sh
  
-
+rm -f /root/slowdns.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/wg.sh
