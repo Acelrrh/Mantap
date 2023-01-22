@@ -21,7 +21,7 @@ wget -O addss-p "https://raw.githubusercontent.com/Acelrrh/Mantap/main/shadowsoc
 chmod +x addss-p
 wget -O shadowhost "https://raw.githubusercontent.com/Acelrrh/Mantap/main/shadowsocks-plugin/shadowhost.sh"
 chmod +x shadowhost && shadowhost
-wget -O delss "https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/shadowsocks/delss.sh"
+wget -O delss "https://raw.githubusercontent.com/Acelrrh/Mantap/main/shadowsocks/delss.sh"
 cd
 MYIP=$(wget -qO- ipinfo.io/ip);
 clear
