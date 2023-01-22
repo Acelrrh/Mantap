@@ -81,7 +81,6 @@ cat > /etc/xray/config.json << END
   },
   "inbounds": [
     {
-      "listen": "127.0.0.1",
       "port": 8443,
       "protocol": "vmess",
       "settings": {
@@ -108,7 +107,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/vmess",
+          "path": "/vmess/",
           "headers": {
             "Host": ""
           }
@@ -137,7 +136,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/vmess",
+          "path": "/vmess/",
           "headers": {
             "Host": ""
           }
@@ -153,7 +152,6 @@ cat > /etc/xray/config.json << END
       }
     },
     {
-     "listen": "127.0.0.1",
       "port": 8443,
       "protocol": "vless",
       "settings": {
@@ -197,8 +195,7 @@ cat > /etc/xray/config.json << END
       }
     },
     {
-      "listen": "127.0.0.1",
-      "port": 82,
+      "port": 80,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -233,8 +230,7 @@ cat > /etc/xray/config.json << END
       }
     },
     {
-      "listen": "127.0.0.1",    
-      "port": 81,
+      "port": 2083,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -245,7 +241,7 @@ cat > /etc/xray/config.json << END
         ],
         "fallbacks": [
           {
-            "dest": 8080
+            "dest": 80
           }
         ]
       },
@@ -348,7 +344,7 @@ END
 # / / Installation Xray Service
 cat > /etc/systemd/system/xray.service << END
 [Unit]
-Description=Xray Service Mod By BABANG BOY
+Description=Xray Service Mod By SL
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
@@ -369,8 +365,8 @@ END
 # Accept port Xray
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8080 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
