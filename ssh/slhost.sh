@@ -18,12 +18,11 @@ mkdir -p /etc/xray
 mkdir -p /etc/v2ray
 echo "$SUB_DOMAIN" >> /etc/v2ray/domain
 #
-read -rp "Masukkan domain: " -e domain
-
-read -rp "Masukkan Subdomain: " -e sub
-SUB_DOMAIN=${sub}.${domain}
-NS_DOMAIN=slowdns-${SUB_DOMAIN}
-echo $NS_DOMAIN > /root/nsdomain
+read sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+DOMAIN=mantapxsl.my.id
+SUB_DOMAIN=boy-${sub}.Sg01.vpnbima.my.id
+NS_DOMAIN=boy2-${sub}.mantapxsl.my.id
 CF_ID=slinfinity69@gmail.com
 CF_KEY=dd2c5e0313f122b3c1833471d469b1025f492
 set -euo pipefail
