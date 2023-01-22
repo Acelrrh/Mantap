@@ -196,7 +196,7 @@ rm -f /etc/default/sslh
 
 # Settings SSLH
 cat > /etc/default/sslh <<-END
-# Default options for sslh initscript
+ #Default options for sslh initscript
 # sourced by /etc/init.d/sslh
 
 # Disabled by default, to force yourself
