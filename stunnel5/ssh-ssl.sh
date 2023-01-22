@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn=""raw.githubusercontent.com/acelrrh/Mantap/main/ssh
+akbarvpn="raw.githubusercontent.com/acelrrh/Mantap/main/ssh
 
 # Link Hosting Kalian Untuk Xray
 akbarvpnn="raw.githubusercontent.com/acelrrh/Mantap/main/xray"
@@ -45,7 +45,7 @@ email=akbarssh21@gmail.com
 cd
 
 # ssl
-# Install SSLH
+ Install SSLH
 apt -y install sslh
 rm -f /etc/default/sslh
 
@@ -81,7 +81,7 @@ systemctl restart sslh
 
 
 # ssl
-# install stunnel 5 
+ install stunnel 5 
 cd /root/
 wget -q -O stunnel5.zip "https://${akbarvpnnnn}/stunnel5.zip"
 unzip -o stunnel5.zip
