@@ -1,54 +1,43 @@
 #!/bin/bash
-# ==========================================
-# Color
-RED='\033[0;31m'
-NC='\033[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
-# ==========================================
-#information
-OK="${GREEN}[OK]${NC}"
-Error="${RED}[Mistake]${NC}"
 clear
-echo -e ""
-echo -e "$BLUE╔═══════════════════════════════════════$BLUE╗"
-echo -e "$BLUE║           $ORANGE  [ Main Menu ]          $BLUE   ║"
-echo -e "$BLUE╠═══════════════════════════════════════$BLUE╣"
-echo -e "$BLUE║---------------------------------------║"
-echo -e "$BLUE╠➣$NC 1$NC. XRAYS WS/GRPC               $BLUE      ║ "
-echo -e "$BLUE╠➣$NC 2$NC. Restart All Service         $BLUE      ║ "
-echo -e "$BLUE╠➣$NC 3$NC. List Port Used              $BLUE      ║ "
-echo -e "$BLUE╠➣$NC 4$NC. Cek Service                 $BLUE      ║ "
-echo -e "$BLUE╠➣$NC 5$NC. Settings                    $BLUE      ║ "
-echo -e "$BLUE╠➣$NC 6$NC. Exit                        $BLUE      ║ "
-echo -e "$BLUE║---------------------------------------║"
-echo -e "$BLUE╠➣$NC Original Script by SL                $BLUE║"
-echo -e "$BLUE╠➣$NC Mod Menu by LIZSVR                   $BLUE║"
-echo -e "$BLUE╠➣$NC Telegram https://t.me/liz_mine       $BLUE║"
-echo -e "$BLUE╚═══════════════════════════════════════╝$NC"  
-read -p "Select From Options [ 1 - 6 ] : " menu
+m="\033[0;1;36m"
+y="\033[0;1;37m"
+yy="\033[0;1;32m"
+yl="\033[0;1;33m"
+wh="\033[0m"
+echo -e "$y                             VMESS $wh"
+echo -e "$y-------------------------------------------------------------$wh"
+echo -e "$y 1$y. Create Account XRAYS Vmess Websocket"
+echo -e "$y 2$y. Delete Account XRAYS Vmess Websocket"
+echo -e "$y 3$y. Extending Account XRAYS Vmess Active Life"
+echo -e "$y 4$y. Check User Login XRAYS Vmess"
+echo -e "$y 5$y. Renew Certificate XRAYS Account"
+echo -e "$y 6$y. Menu"
+echo -e "$y 7$y. Exit"
+echo -e "$y-------------------------------------------------------------$wh"
+read -p "Select From Options [ 1 - 7 ] : " menu
 echo -e ""
 case $menu in
 1)
-maddxray
+addvmess
 ;;
 2)
-restart-xray
+delvmess
 ;;
 3)
-cek-port
+renewvmess
 ;;
 4)
-start-menu
+cekvmess
 ;;
 5)
-msettings
+certv2ray
 ;;
-5)
+6)
+clear
+menu
+;;
+7)
 clear
 exit
 ;;
@@ -57,4 +46,3 @@ clear
 menu
 ;;
 esac
-#
