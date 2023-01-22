@@ -262,7 +262,7 @@ rm -f stunnel5.zip
 mkdir -p /etc/stunnel5
 chmod 644 /etc/stunnel5
 
-# Download Config Stunnel4
+# Download Config Stunnel5
 cd
 #install stunnel
 #apt install stunnel5 -y
@@ -315,12 +315,12 @@ Type=forking
 WantedBy=multi-user.target
 END
 
-# Service Stunnel4 /etc/init.d/stunnel4
-wget -q -O /etc/init.d/stunnel4 "https://${akbarvpnnnn}/stunnel5.init"
+# Service Stunnel5 /etc/init.d/stunnel5
+wget -q -O /etc/init.d/stunnel5 "https://${akbarvpnnnn}/stunnel5.init"
 
 # Ubah Izin Akses
-chmod 600 /etc/stunnel4/stunnel4.pem
-chmod +x /etc/init.d/stunnel4
+chmod 600 /etc/stunnel5/stunnel5.pem
+chmod +x /etc/init.d/stunnel5
 cp /usr/local/bin/stunnel /usr/local/bin/stunnel5
 
 # Remove File
