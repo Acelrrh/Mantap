@@ -247,7 +247,7 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# install stunnel 4 
+# install stunnel 5 
 cd /root/
 wget -q -O stunnel5.zip "https://${akbarvpnnnn}/stunnel5.zip"
 unzip -o stunnel5.zip
@@ -265,7 +265,7 @@ chmod 644 /etc/stunnel5
 # Download Config Stunnel4
 cd
 #install stunnel
-#apt install stunnel4 -y
+#apt install stunnel5 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
 client = no
@@ -308,7 +308,7 @@ Documentation=https://github.com/Akbar218
 After=syslog.target network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/stunnel4 /etc/stunnel4/stunnel4.conf
+ExecStart=/usr/local/bin/stunnel5 /etc/stunnel5/stunnel5.conf
 Type=forking
 
 [Install]
@@ -327,15 +327,15 @@ cp /usr/local/bin/stunnel /usr/local/bin/stunnel5
 rm -r -f /usr/local/share/doc/stunnel/
 rm -r -f /usr/local/etc/stunnel/
 rm -f /usr/local/bin/stunnel
-rm -f /usr/local/bin/stunnel4
-rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel4
+rm -f /usr/local/bin/stunnel5
+rm -f /usr/local/bin/stunnel5
+#rm -f /usr/local/bin/stunnel5
 
-# Restart Stunnel 4
-systemctl stop stunnel4
-systemctl enable stunnel4
-systemctl start stunnel4
-systemctl restart stunnel4
+# Restart Stunnel 5
+systemctl stop stunnel5
+systemctl enable stunnel5
+systemctl start stunnel5
+systemctl restart stunnel5
 /etc/init.d/stunnel4 restart
 /etc/init.d/stunnel4 status
 /etc/init.d/stunnel4 restart
