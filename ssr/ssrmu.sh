@@ -120,9 +120,9 @@ Get_User_info(){
 	protocol_param=$(echo "${user_info_get}"|grep -w "protocol_param :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
 	[[ -z ${protocol_param} ]] && protocol_param="0(无限)"
 	obfs=$(echo "${user_info_get}"|grep -w "obfs :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
-	#transfer_enable=$(echo "${user_info_get}"|grep -w "transfer_enable :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}'|awk -F "ytes" '{print $1}'|sed 's/KB/ KB/;s/MB/ MB/;s/GB/ GB/;s/TB/ TB/;s/PB/ PB/')
-	#u=$(echo "${user_info_get}"|grep -w "u :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
-	#d=$(echo "${user_info_get}"|grep -w "d :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
+	transfer_enable=$(echo "${user_info_get}"|grep -w "transfer_enable :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}'|awk -F "ytes" '{print $1}'|sed 's/KB/ KB/;s/MB/ MB/;s/GB/ GB/;s/TB/ TB/;s/PB/ PB/')
+	u=$(echo "${user_info_get}"|grep -w "u :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
+	d=$(echo "${user_info_get}"|grep -w "d :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
 	forbidden_port=$(echo "${user_info_get}"|grep -w "forbidden_port :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
 	[[ -z ${forbidden_port} ]] && forbidden_port="Allow all"
 	speed_limit_per_con=$(echo "${user_info_get}"|grep -w "speed_limit_per_con :"|sed 's/[[:space:]]//g'|awk -F ":" '{print $NF}')
@@ -131,23 +131,23 @@ Get_User_info(){
 }
 Get_User_transfer(){
 	transfer_port=$1
-	#echo "transfer_port=${transfer_port}"
+	echo "transfer_port=${transfer_port}"
 	all_port=$(${jq_file} '.[]|.port' ${config_user_mudb_file})
-	#echo "all_port=${all_port}"
+	echo "all_port=${all_port}"
 	port_num=$(echo "${all_port}"|grep -nw "${transfer_port}"|awk -F ":" '{print $1}')
-	#echo "port_num=${port_num}"
+	echo "port_num=${port_num}"
 	port_num_1=$(expr ${port_num} - 1)
-	#echo "port_num_1=${port_num_1}"
+	echo "port_num_1=${port_num_1}"
 	transfer_enable_1=$(${jq_file} ".[${port_num_1}].transfer_enable" ${config_user_mudb_file})
-	#echo "transfer_enable_1=${transfer_enable_1}"
+	echo "transfer_enable_1=${transfer_enable_1}"
 	u_1=$(${jq_file} ".[${port_num_1}].u" ${config_user_mudb_file})
-	#echo "u_1=${u_1}"
+	echo "u_1=${u_1}"
 	d_1=$(${jq_file} ".[${port_num_1}].d" ${config_user_mudb_file})
-	#echo "d_1=${d_1}"
+	echo "d_1=${d_1}"
 	transfer_enable_Used_2_1=$(expr ${u_1} + ${d_1})
-	#echo "transfer_enable_Used_2_1=${transfer_enable_Used_2_1}"
+	echo "transfer_enable_Used_2_1=${transfer_enable_Used_2_1}"
 	transfer_enable_Used_1=$(expr ${transfer_enable_1} - ${transfer_enable_Used_2_1})
-	#echo "transfer_enable_Used_1=${transfer_enable_Used_1}"
+	echo "transfer_enable_Used_1=${transfer_enable_Used_1}"
 	
 	
 	if [[ ${transfer_enable_1} -lt 1024 ]]; then
@@ -165,7 +165,7 @@ Get_User_transfer(){
 		transfer_enable=$(awk 'BEGIN{printf "%.2f\n",'${transfer_enable_1}'/'1099511627776'}')
 		transfer_enable="${transfer_enable} TB"
 	fi
-	#echo "transfer_enable=${transfer_enable}"
+	echo "transfer_enable=${transfer_enable}"
 	if [[ ${u_1} -lt 1024 ]]; then
 		u="${u_1} B"
 	elif [[ ${u_1} -lt 1048576 ]]; then
@@ -181,7 +181,7 @@ Get_User_transfer(){
 		u=$(awk 'BEGIN{printf "%.2f\n",'${u_1}'/'1099511627776'}')
 		u="${u} TB"
 	fi
-	#echo "u=${u}"
+	echo "u=${u}"
 	if [[ ${d_1} -lt 1024 ]]; then
 		d="${d_1} B"
 	elif [[ ${d_1} -lt 1048576 ]]; then
@@ -197,7 +197,7 @@ Get_User_transfer(){
 		d=$(awk 'BEGIN{printf "%.2f\n",'${d_1}'/'1099511627776'}')
 		d="${d} TB"
 	fi
-	#echo "d=${d}"
+	echo "d=${d}"
 	if [[ ${transfer_enable_Used_1} -lt 1024 ]]; then
 		transfer_enable_Used="${transfer_enable_Used_1} B"
 	elif [[ ${transfer_enable_Used_1} -lt 1048576 ]]; then
@@ -213,7 +213,7 @@ Get_User_transfer(){
 		transfer_enable_Used=$(awk 'BEGIN{printf "%.2f\n",'${transfer_enable_Used_1}'/'1099511627776'}')
 		transfer_enable_Used="${transfer_enable_Used} TB"
 	fi
-	#echo "transfer_enable_Used=${transfer_enable_Used}"
+	echo "transfer_enable_Used=${transfer_enable_Used}"
 	if [[ ${transfer_enable_Used_2_1} -lt 1024 ]]; then
 		transfer_enable_Used_2="${transfer_enable_Used_2_1} B"
 	elif [[ ${transfer_enable_Used_2_1} -lt 1048576 ]]; then
@@ -229,7 +229,7 @@ Get_User_transfer(){
 		transfer_enable_Used_2=$(awk 'BEGIN{printf "%.2f\n",'${transfer_enable_Used_2_1}'/'1099511627776'}')
 		transfer_enable_Used_2="${transfer_enable_Used_2} TB"
 	fi
-	#echo "transfer_enable_Used_2=${transfer_enable_Used_2}"
+	echo "transfer_enable_Used_2=${transfer_enable_Used_2}"
 }
 urlsafe_base64(){
 	date=$(echo -n "$1"|base64|sed ':a;N;s/\n/ /g;ta'|sed 's/ //g;s/=//g;s/+/-/g;s/\//_/g')
