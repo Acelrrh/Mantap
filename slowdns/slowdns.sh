@@ -12,18 +12,18 @@ netfilter-persistent reload
 
 cd
 #delete directory
-rm -rf /root/nsdomain
+rm -rf /root/domain
 rm nsdomain
 
 #input nameserver manual to cloudflare
-read -rp "Masukkan domain: " -e domain
+read -rp "Masukkan domain:$domain " -e domain
 
 read -rp "Masukkan Subdomain: " -e sub
 SUB_DOMAIN=${sub}.${domain}
 NS_DOMAIN=slowdns-${SUB_DOMAIN}
-echo $NS_DOMAIN > /root/nsdomain
+echo $NS_DOMAIN > /root/domain
 
-nameserver=$(cat /root/nsdomain)
+nameserver=$(cat /root/domain)
 apt update -y
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
