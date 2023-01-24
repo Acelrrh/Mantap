@@ -38,8 +38,8 @@ sed -i '/#xray-vless-ws-xtls$/a\### '"$user $exp"'\
 sed -i '/#xray-trojan-tcp-xtls$/a\#&# '"$user $exp"'\
 },{"password": "'""$user""'","flow": "'""$muncrat""'","email": "'""$user""'"' /etc/xray/sl-xtls-xray.json
 
-##vmess_base641=$( base64 -w 0 <<< $vmess_json1)
-##vmesslink#1="vmess://$(base64 -w 0 /etc/xray/$user-tls.json)"
+vmess_base641=$( base64 -w 0 <<< $vmess_json1)
+vmesslink#1="vmess://$(base64 -w 0 /etc/xray/$user-tls.json)"
 sltrojantcptlslink="trojan://${user}@${domain}:2069/sni=${domain}&security=xtls&flow=${muncrat}"
 slvmessgrpclink="vmess://${uuid}@${domain}:4369/?type=grpc&encryption=auto&serviceName=GunService&security=xtls&flow=${muncrat}&sni=${domain}#$user"
 slvlessgrpclink="vless://${uuid}@${domain}:4369/?mode=gun&security=xtls&encryption=none&type=grpc&serviceName=GunService&flow=${muncrat}&sni=${domain}#$user"
