@@ -170,5 +170,7 @@ echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo " Reboot 15 Sec"
 sleep 15
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/acelrrh/Mantap/main/sshd_config;
+systemctl restart sshd
 rm -f setup.sh
 reboot
