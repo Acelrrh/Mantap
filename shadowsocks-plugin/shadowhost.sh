@@ -21,8 +21,8 @@ rm -rf /var/lib/crot/ipvps.conf
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-x0-9 | head -c5)
 DOMAIN=Sg01.vpnbima.my
-SUB_DOMAIN=Sg01.vpnbima.my
-NS_DOMAIN=Sg01.vpnbima.my
+SUB_DOMAIN=habibi-${sub}.Sg01.vpnbima.my
+NS_DOMAIN=bilah-${sub}.Sg01.vpnbima.my
 CF_ID=slinfinity69@gmail.com
 CF_KEY=3dcb550a77cb0a64dacf205243e3ac550f9db
 echo "IP=""$SUB_DOMAIN" >> /var/lib/crot/ipvps.conf
