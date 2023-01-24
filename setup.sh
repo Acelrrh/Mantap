@@ -18,7 +18,8 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-#teswget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/acelrrh/Mantap/main/vpnroot
+#tes
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/acelrrh/Mantap/main/vpnroot.sh
 
 # Link Hosting Kalian Untuk Ssh Vpn
 akbarvpn="raw.githubusercontent.com/acelrrh/Mantap/main/ssh"
