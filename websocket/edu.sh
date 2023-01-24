@@ -25,6 +25,8 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 80
 Restart=on-failure
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 143
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
