@@ -18,11 +18,12 @@ mkdir -p /etc/xray
 mkdir -p /etc/v2ray
 echo "$SUB_DOMAIN" >> /etc/v2ray/domain
 #
-read sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-DOMAIN=Sg01.vpnbima.my.id
-SUB_DOMAIN=habib-${sub}.Sg01.vpnbima.my.id
-NS_DOMAIN=bilah-${sub}.Sg01.vpnbima.my.id
+read -rp "Masukkan Domain: " -e DOMAIN
+echo ""
+echo "Domain: ${DOMAIN}" 
+echo ""
+read -rp "Masukkan Subdomain CDN Cloudflare: " -e sub
+SUB_DOMAIN=${sub}.${DOMAIN}
 CF_ID=slinfinity69@gmail.com
 CF_KEY=dd2c5e0313f122b3c1833471d469b1025f492
 set -euo pipefail
