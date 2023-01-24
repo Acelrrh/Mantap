@@ -23,7 +23,7 @@ echo "installing insaller SSH "
 echo "Progress..."
 echo "Sedang berlangsung..."
 sleep 1
-wget https://raw.githubusercontent.com/hidessh99/autoscript-ssh-slowdns/main/ssh.sh && chmod +x ssh.sh && ./ssh.sh
+wget https://raw.githubusercontent.com/acelrrh/slowdns/main/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 echo -e "[ ${green}INFO${NC} ] DONE... ALAT"
 sleep 1
 echo "Progress..."
@@ -36,7 +36,7 @@ cd
 echo "installing insaller Slowdns "
 echo "Progress..."
 echo "Sedang berlangsung..."
-wget https://raw.githubusercontent.com/hidessh99/autoscript-ssh-slowdns/main/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+wget https://raw.githubusercontent.com/acelrrh/slowdns/main/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 sleep 1
 
 echo -e "[ ${green}INFO${NC} ] DONE... ALAT"
