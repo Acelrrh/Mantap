@@ -45,9 +45,9 @@ email=akbarssh21@gmail.com
 cd
 
 # ssl
- Install SSLH
-apt -y install sslh
-rm -f /etc/default/sslh
+#Install SSLH
+#apt -y install sslh
+#rm -f /etc/default/sslh
 
 # Settings SSLH
 cat > /etc/default/sslh <<-END
