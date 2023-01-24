@@ -16,8 +16,6 @@ mkdir -p /usr/bin/xray
 mkdir -p /usr/bin/v2ray
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
-echo "$SUB_DOMAIN" >> /etc/v2ray/domain
-#
 read -rp "Masukkan Domain: " -e DOMAIN
 echo ""
 echo "Domain: ${DOMAIN}" 
