@@ -12,9 +12,9 @@ echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\e[33m OS            \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m IP            \e[0m:  $IPVPS"	
 echo -e "\e[33m ASN           \e[0m:  $ISP"
-echo -e "\e[33m WA          \e[0m:  +6281374452477"
+echo -e "\e[33m WA            \e[0m:  +6281374452477"
 echo -e "\e[33m DOMAIN        \e[0m:  $domain"	
-echo -e "\e[33m DATE & TIME   \e[0m:  $DATE2"	
+echo -e "\e[33m Telegram      \e[0m:  https://t.me/akunsshprabayar"	
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "                 • SCRIPT MENU •                 "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
