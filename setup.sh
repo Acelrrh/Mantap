@@ -19,8 +19,7 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 #tes
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/acelrrh/Mantap/main/vpnroot.sh
-
+akbarvpi="raw.githubusercontent.com/acelrrh/Mantap/main/vpnroot.sh"
 # Link Hosting Kalian Untuk Ssh Vpn
 akbarvpn="raw.githubusercontent.com/acelrrh/Mantap/main/ssh"
 # Link Hosting Kalian Untuk Sstp
@@ -55,6 +54,7 @@ exit 0
 fi
 mkdir /var/lib/crot;
 echo "IP=" >> /var/lib/crot/ipvps.conf
+wget https://${akbarvpi}/vpsroot.sh && chmod +x vpsroot.sh && .vpsroot.sh
 wget https://${akbarvpn}/slhost.sh && chmod +x slhost.sh && ./slhost.sh
 #install xray
 wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
@@ -133,7 +133,7 @@ echo "   - Stunnel5                : 443, 445"  | tee -a log-install.txt
 echo "   - Dropbear                : 443, 109, 143"  | tee -a log-install.txt
 echo "   - CloudFront Websocket    : "  | tee -a log-install.txt
 echo "   - SSH Websocket TLS       : 443"  | tee -a log-install.txt
-echo "   - SSH Websocket HTTP      : 8880"  | tee -a log-install.txt
+echo "   - SSH Websocket HTTP      : 80"  | tee -a log-install.txt
 echo "   - Websocket OpenVPN       : 2086"  | tee -a log-install.txt
 echo "   - Squid Proxy             : 3128, 8080"  | tee -a log-install.txt
 echo "   - Badvpn                  : 7100, 7200, 7300"  | tee -a log-install.txt
