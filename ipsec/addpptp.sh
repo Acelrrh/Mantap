@@ -70,5 +70,5 @@ Password  : $VPN_PASSWORD
 Created   : $hariini
 Expired   : $exp
 ============================
-Script Mod By SL
+Script Mod By babangboy
 EOF
