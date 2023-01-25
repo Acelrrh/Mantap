@@ -7,7 +7,7 @@ yy="\033[0;1;32m"
 yl="\033[0;1;33m"
 wh="\033[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "                 • SUPREME •                 "
+echo -e "                 • SECRIP PREMIUM BABANGBOY•                 "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[33m OS            \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m Telegram            \e[0m: @Anonymouse1701 "	
