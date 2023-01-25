@@ -19,7 +19,7 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 #tes
-akbarvpi="raw.githubusercontent.com/acelrrh/Mantap/main/vpnroot.sh"
+akbarvpi="raw.githubusercontent.com/acelrrh/Mantap/main/vpsroot.sh"
 # Link Hosting Kalian Untuk Ssh Vpn
 akbarvpn="raw.githubusercontent.com/acelrrh/Mantap/main/ssh"
 # Link Hosting Kalian Untuk Sstp
