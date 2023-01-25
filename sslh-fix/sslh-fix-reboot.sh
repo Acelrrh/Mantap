@@ -2,6 +2,7 @@
 # ==========================================
 
 sleep 20
+/etc/init.d/stunnel4 restart
 systemctl stop ws-tls 
 pkill python
 systemctl stop sslh
