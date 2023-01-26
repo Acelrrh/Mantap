@@ -23,7 +23,7 @@ akbarvpnn="raw.githubusercontent.com/acelrrh/Mantap/main/xray"
 akbarvpnnn="raw.githubusercontent.com/acelrrh/Mantap/main/trojango"
 
 # Link Hosting Kalian Untuk Stunnel5
-akbarvpnnnn="raw.githubusercontent.com/acelrrh/Mantap/main/stunnel5"
+#akbarvpnnnn="raw.githubusercontent.com/acelrrh/Mantap/main/stunnel5"
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -184,7 +184,7 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
-# install squid (proxy nya aku matikan)
+# install squid 
 cd
 apt -y install squid3
 wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
