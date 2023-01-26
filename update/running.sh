@@ -57,16 +57,16 @@ CITY=$( curl -s ipinfo.io/city )
 l2tp_status=$(systemctl status xl2tpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 openvpn_service="$(systemctl show openvpn.service --no-page)"
 oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)
-#status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"
-#ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)
+status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"
+ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)
 sst_status=$(systemctl status shadowsocks-libev-server@tls | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1) 
 ssh_status=$(systemctl status shadowsocks-libev-server@http | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1) 
-#status_ss_http="$(systemctl show shadowsocks-libev-server@http.service --no-page)"
-#ss_http=$(echo "${status_ss_http}" | grep 'ActiveState=' | cut -f2 -d=)
-#sssohtt=$(systemctl status shadowsocks-libev-server@*-http | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#status="$(systemctl show shadowsocks-libev.service --no-page)"
-#status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+status_ss_http="$(systemctl show shadowsocks-libev-server@http.service --no-page)"
+ss_http=$(echo "${status_ss_http}" | grep 'ActiveState=' | cut -f2 -d=)
+sssohtt=$(systemctl status shadowsocks-libev-server@*-http | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+status="$(systemctl show shadowsocks-libev.service --no-page)"
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 nontls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 vless_tls_v2ray_status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -89,7 +89,7 @@ sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "
 wstls=$(systemctl status ws-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsdrop=$(systemctl status ws-nontls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
@@ -334,11 +334,11 @@ totalram=$(($total_ram/1024))
 kernelku=$(uname -r)
 
 # WAKTU SEKARANG 
-#harini=`date -d "0 days" +"%d-%m-%Y"`
-#jam=`date -d "0 days" +"%X"`
+harini=`date -d "0 days" +"%d-%m-%Y"`
+jam=`date -d "0 days" +"%X"`
 
 # DNS PATCH
-#tipeos2=$(uname -m)
+tipeos2=$(uname -m)
 
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
@@ -367,7 +367,7 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "❇️ SSH / TUN               :$status_ssh"
 echo -e "❇️ OpenVPN                 :$status_openvpn"
 echo -e "❇️ Dropbear                :$status_beruangjatuh"
-echo -e "❇️ Stunnel5                :$status_stunnel"
+echo -e "❇️ Stunnel5                :$status_stunne4"
 echo -e "❇️ Squid                   :$status_squid"
 echo -e "❇️ Fail2Ban                :$status_fail2ban"
 echo -e "❇️ Crons                   :$status_cron"
